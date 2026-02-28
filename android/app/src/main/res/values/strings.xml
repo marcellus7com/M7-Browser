@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">M7 Browser</string>
+    <string name="title_activity_main">M7 Browser</string>
+    <string name="package_name">com.m7community.app</string>
+    <string name="custom_url_scheme">com.m7community.app</string>
+</resources>
