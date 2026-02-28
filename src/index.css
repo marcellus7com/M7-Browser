@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: #141824;
+  --bg-card: #1C2233;
+  --bg-card-2: #222840;
+  --bg-elevated: #181D2E;
+  --text-primary: #FFFFFF;
+  --text-muted: #B0B8D0;
+  --text-faint: #6B7592;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+}
+
+.light {
+  --bg-main: #F5F7FA;
+  --bg-card: #FFFFFF;
+  --bg-card-2: #ECEFF6;
+  --bg-elevated: #E4E8F2;
+  --text-primary: #0D1117;
+  --text-muted: #4A5568;
+  --text-faint: #9BA3BB;
+  --border-subtle: rgba(0, 0, 0, 0.1);
+}
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", sans-serif;
+
+  --color-primary: #05989F;
+  --color-primary-dark: #047A80;
+  --color-danger: #FF0000;
+
+  --color-bg-main: var(--bg-main);
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-2: var(--bg-card-2);
+  --color-bg-elevated: var(--bg-elevated);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+
+  --color-border-subtle: var(--border-subtle);
+  --color-border-primary: rgba(5, 152, 159, 0.18);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-main text-text-primary font-sans antialiased transition-colors duration-350;
+    overflow: hidden;
+  }
+
+  /* Hide scrollbars globally */
+  * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  *::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+.glass-nav {
+  background: rgba(28, 34, 51, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.light .glass-nav {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.cta-gradient {
+  background: linear-gradient(to right, #05989F, #047A80);
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes pulse-cta {
+  0% { box-shadow: 0 4px 28px rgba(5, 152, 159, 0.4); }
+  50% { box-shadow: 0 4px 48px rgba(5, 152, 159, 0.7); }
+  100% { box-shadow: 0 4px 28px rgba(5, 152, 159, 0.4); }
+}
+
+.pulse-cta {
+  animation: pulse-cta 2.8s infinite;
+}

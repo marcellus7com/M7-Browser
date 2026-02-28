@@ -1,0 +1,9 @@
+{
+  "name": "M7 Browser",
+  "description": "A high-performance browser ecosystem with extension management, real-time support, and M7 Community integration.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
